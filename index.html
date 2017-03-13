@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<h1>Add ToDo</h1>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body ng-app="todoListApp">
+    <div ng-controller="todoController as todoCtrl">
+        <div class="form-group">
+            <input type="text" id="errand" class="form-control" placeholder="Add Task" ng-model="todoCtrl.task">
+</div>
+
+        <select class="form-control" placeholder="Select Priority" ng-model="todoCtrl.priority" ng-options="priority[0] for priority in todoCtrl.priorities "></select>
+    </div>
+    <div class="panel-footer"><button id="AddItem" class=" btn btn-primary" ng-click="todoCtrl.add()">Add To List</button></div>
+    </div>
+
+    <br><br>
+    <button class="edit">Add ToDo</button><button class="delete">Delete</button>
+    <button id="High" class="btn btn-high" ng-click="todoCtrl.high()">Highest Priority</button>
+    <button id="Low" class="btn btn-low" ng-click="todoCtrl.low()">Lowest Priority</button>
+    <button id="Medium" class="btn btn-medium" ng-click="todoCtrl.medium()">Medium Priority</button>
+    </div>
+
+
+    </div>
+
+    <p>Ordered by highest priority</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/todo.controller.js">
+    </script>
+
+</body>
+
+</html>
