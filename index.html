@@ -10,10 +10,10 @@
 <body ng-app="todoListApp">
     <div ng-controller="todoController as todoCtrl">
         <div class="form-group">
-            <input type="text" id="errand" class="form-control" placeholder="Add Task" ng-model="todoCtrl.task">
+            <input type="text" id="priority" class="form-control" placeholder="Add Task" ng-model="todoCtrl.task">
 </div>
 
-        <select class="form-control" placeholder="Select Priority" ng-model="todoCtrl.priority" ng-options="priority[0] for priority in todoCtrl.priorities "></select>
+        <select class="form-control" placeholder="Select Priority" ng-model="todoCtrl.priority" ng-options="priority.value as priority.name for priority in todoCtrl.priorities"></select>
     </div>
     <div class="panel-footer"><button id="AddItem" class=" btn btn-primary" ng-click="todoCtrl.add()">Add To List</button></div>
     </div>
@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="scripts/todo.controller.js">
+    <script type="text/javascript" src="todo.controller.js">
     </script>
 
 </body>
